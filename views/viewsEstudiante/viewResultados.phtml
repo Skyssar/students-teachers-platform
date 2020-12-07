@@ -1,0 +1,83 @@
+<?php include ("views/headers/headerEstudiante.html"); ?>
+
+<div class="d-flex justify-content-center p-2">
+    <div class="col-md-12  p-4">
+
+        <div class="card">
+
+        <div class="d-flex justify-content-center p-3">
+            <label><h4>Resultados</h4></label>
+        </div>
+
+        <div class="d-flex justify-content-center p-2">
+        <div class="col-md-12">
+    
+            <div class="d-flex justify-content-center">
+                <div class="card col-md-3" >
+                    <div class="card-body text-center">
+                        <h4 class="card-title">NOTA</h4>
+                        <label id="nota" class="card-text text-primary"><h4><?php echo $nota ?> / 5.0</h4>  </label> <!--- La nota va aquí -->
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4"> <!-- -- ----------------------------  -->  
+
+            <div class="d-flex justify-content-center">
+                <label><h4>Revisión</h4></label>
+            </div>
+
+            <hr class="my-4"> <!-- -- ----------------------------  -->  
+
+            
+
+            <form action="#" method = "POST">
+
+                <div id="datos" class="container p-2">
+                    <!-- -- ----------------------------  
+                <label id="numero_pregunta"></label><label id= "pregunta"></label>
+
+                        <input type="radio" id="a" name="question" value="a">
+                        <label for="a">a)</label><br>
+                        <input type="radio" id="b" name="question" value="b">
+                        <label for="b">b)</label><br>
+                        <input type="radio" id="c" name="question" value="c">
+                        <label for="c">c)</label><br>
+                        <input type="radio" id="d" name="question" value="d">
+                        <label for="d">d)</label>
+                        --> 
+                        
+                    </div>
+
+                <div class="text-right p-4">
+                    <a href="index.php?controller=actividades&accion=lecturas" class="btn btn-primary">Finalizar revisión</a>
+                </div>
+                        
+            </form>
+
+                
+
+        </div> 
+    </div>
+    
+
+
+
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<?php include ("views/footers/footer.html"); ?>
+
+<script type = "text/javascript">
+
+$(document).ready(function(){
+    
+    obtenerResultados( <?php echo $id_lectura ?>, <?php echo $id_estudiante ?> );
+
+   
+}); 
+</script>

@@ -1,0 +1,91 @@
+<?php include ("views/headers/headerDocente.html"); ?>
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-12 p-4">
+
+    <?php if(!empty($message)): ?>
+        <div class="col-md-12 p-2">
+        <div class="alert alert-success" role="alert"> <?= $message ?></div> </div> 
+    <?php endif; ?>
+
+        <div class="card">
+
+            <div class="card-body">
+               
+                <form action= "#" method="POST">
+                    
+                    <div class="card card-header bg-primary">
+                        <h5  class = "text-white text-center">DETALLES</h5>
+                    </div>
+                    
+                    <hr class="my-4"> <!-- -- ----------------------------  -->  
+                    
+                    <div class="form-group row p-2">
+                        <label class="col-form-label col-md-1">Título:</label>
+                        <input type="text" class="form-control col-md-7" name="titulo" id="titulo_lectura" placeholder="Título de la lectura" required>
+                        <div class = "col-sm-1"></div>
+
+                        <select class="form-control col-sm-2 " name = "id_grado" id="id_grado" required>
+                            <option selected disabled value="">Grado</option>
+                                <?php  foreach ($grados as $grado) { ?> 
+                            <option value ="<?=$grado['id_grado']?>"><?=$grado['code']?></option>
+                                <?php  } ?>
+                        </select>
+
+                    </div>
+                    
+                    <div class="form-group p-2">
+                        <label>Contenido</label>
+                        <textarea class="ckeditor" rows= "4" name="contenido" id="contenido" required> </textarea>
+                    </div>
+
+                    <hr class="my-4"> <!-- -- ----------------------------  -->  
+
+                    <div class="d-flex justify-content-center">
+                        <label id= ""><h4>Preguntas</h4></label>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-8">
+                            <table class = "table table-striped">
+
+                                <tbody id = "datos">
+
+                                </tbody>
+                            </table>
+                            <div class='text-center p-2'>
+                                <a href ='index.php?controller=preguntas&accion=crear&id=<?php echo $id_lectura ?>'
+                                class='btn btn-warning'>Añadir pregunta</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <hr class="my-4"> <!-- -- ----------------------------  -->  
+
+                    <div class="text-right p-2">
+                        
+                        <button type="submit" class="btn-lg btn-primary ">Guardar lectura</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+    </div>
+ 
+</body>
+</html>
+<?php include ("views/footers/footer.html"); ?>
+
+<script type = "text/javascript">
+
+$(document).ready(function(){
+
+    editarLectura(  <?php echo $id_lectura ?> );
+    obtenerPreguntas( <?php echo $id_lectura ?>  );
+ 
+}); 
+</script>

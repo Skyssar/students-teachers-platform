@@ -1,0 +1,42 @@
+<?php include ("views/headers/headerDocente.html"); ?>
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-8 p-4">
+
+        <div class="card">
+
+        <div class="d-flex justify-content-center p-2">
+            <label><h4>Notas</h4></label>
+        </div>
+
+            <table class = "table table-striped text-center">
+
+                <thead>
+                    <tr>
+                        <th>Título Lectura</th>
+                        <th>Estudiante</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody id = "datos">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<?php include ("views/footers/footer.html"); ?>
+
+<script type = "text/javascript">
+
+$(document).ready(function(){
+    
+    obtenerNotas( <?php echo $id_profesor ?> );
+
+}); 
+</script>

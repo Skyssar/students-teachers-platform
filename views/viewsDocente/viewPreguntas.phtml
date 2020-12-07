@@ -1,0 +1,105 @@
+<?php include ("views/headers/headerDocente.html"); ?>
+
+<div class="d-flex justify-content-center">
+
+    <div class="col-md-7 p-4">
+
+                <?php if(!empty($message)): ?>
+                        <div class="col-md-12 p-2">
+                        <div class="alert alert-success" role="alert"> <?= $message ?></div> </div> 
+                    <?php endif; ?>
+
+        <div class="card">
+            
+            <div class="card-header bg-primary">
+                <h5  class = "text-white text-center">PREGUNTAS DE OPCIÓN MÚLTIPLE</h5>
+            </div>
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-center">
+                    <label id= "titulo_lectura"></label>
+                </div>
+                    <hr class="my-4">
+                <div class="container">
+
+                    <div class="row d-flex justify-content-end">
+                        <label id='numpre' class="col-form-label">Pregunta No. <?php echo $numero_preguntas ?></label>
+                    </div>
+
+                    <form action= "#" method="POST">
+                    
+                        <div class="form-group ">
+                            <label >Pregunta: </label>
+                            <textarea type="text" class="form-control ol-md-7" rows= "2" id='pregunta' name="pregunta" required> </textarea>
+
+                        </div>
+
+                        <div class="form-group ">
+                            <label >Respuestas: </label>
+                            
+                        </div>
+
+                        <div class="form-group row">
+                            <label class ="col-form-label col-md-1">a)</label>
+                            <input type="text" class="form-control col-md-8" id='a' name="a" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class ="col-form-label col-md-1">b)</label>
+                            <input type="text" class="form-control col-md-8" id='b' name="b" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class ="col-form-label col-md-1">c)</label>
+                            <input type="text" class="form-control col-md-8" id='c' name="c" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class ="col-form-label col-md-1">d)</label>
+                            <input type="text" class="form-control col-md-8" id='d' name="d" required>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class ="col-md-3 col-form-label">Respuesta correcta:</label>
+                          <div class="col-sm-4">
+
+                              <select class="form-control" name = "correcta" id="correcta" required>
+                        
+                                <option selected disabled value="">Seleccione...</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            
+                              </select>
+                          </div>
+                        </div>
+
+                        
+
+                        <div class="text-right ">
+                            <button type="submit" class="btn btn-primary ">Guardar</button>
+                            <a href ='index.php?controller=lecturas&accion=lista'class='btn btn-success'>Finalizar</a>
+                        </div>
+                    
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+                        
+    </div>
+</div>
+ 
+</body>
+</html>
+<?php include ("views/footers/footer.html"); ?>
+
+<script type = "text/javascript">
+
+$(document).ready(function(){
+    obtenerLectura( <?php echo $id_lectura ?> );
+    editarPregunta( <?php echo $id_pregunta ?> );
+    
+}); 
+</script>
+

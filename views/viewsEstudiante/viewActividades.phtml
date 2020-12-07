@@ -1,0 +1,57 @@
+<?php include ("views/headers/headerEstudiante.html"); ?>
+
+<div class="d-flex justify-content-center p-2">
+    <div class="col-md-8  p-4">
+
+        <div class="card">
+
+        <div class="d-flex justify-content-center p-2">
+            <label><h4>Actividades del curso</h4></label>
+        </div>
+
+<?php if ( isset($id_grado) ){ ?>
+
+            <table class = "table table-striped text-center">
+
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Fecha</th>
+                        <th>Docente</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id = "datos">
+
+                </tbody>
+            </table>
+
+<?php } else { ?>
+
+            <div class="d-flex justify-content-center p-2">
+                <label><p>Debe inscribirse en un grado para tener actividades</p></label>
+            </div>
+
+<?php } ?>
+
+
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<?php include ("views/footers/footer.html"); ?>
+
+<script type = "text/javascript">
+
+$(document).ready(function(){
+
+    <?php if( isset($id_grado) ){ ?>
+
+    listarLecturasGrado( <?php echo $id_grado ?> );
+
+    <?php } ?>
+}); 
+</script>

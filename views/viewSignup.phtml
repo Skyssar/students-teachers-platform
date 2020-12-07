@@ -1,0 +1,91 @@
+<?php include ("headers/headerLogin.html"); ?>
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-5 p-4">
+        <div class="card">
+            
+          <div class="card-header bg-primary">
+                  <h4  class = "text-white text-center">REGISTRO USUARIO</h4>
+          </div>
+
+              <div class=" card-body">
+                  <form action= "#" method="POST">
+                  
+                      <div class="form-group row">
+                          <label for="nombres" class ="col-md-3 col-form-label">Nombres:</label>
+                          <div class="col-sm-9">
+                          <input type="text" class="form-control" name="nombres"  placeholder="Ingrese su nombre" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="cedula" class ="col-md-3 col-form-label">Identificación</label>
+                          <div class="col-sm-9">
+                          <input type="text" class="form-control" name="cedula"  placeholder="Ingrese su número de identificación" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="correo" class ="col-md-3 col-form-label">Correo:</label>
+                          <div class="col-sm-9">
+                          <input type="text" class="form-control" name="correo"  placeholder="Ingrese su email" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="ciudad" class ="col-md-3 col-form-label">Ciudad:</label>
+                          <div class="col-sm-9">
+                          <input type="text" class="form-control" name="ciudad"  placeholder="Ingrese su ciudad" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="telefono" class ="col-md-3 col-form-label">Teléfono:</label>
+                          <div class="col-sm-9">
+                          <input type="text" class="form-control" name="telefono"  placeholder="Ingrese su teléfono/celular" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="usuario" class ="col-md-3 col-form-label">Usuario:</label>
+                          <div class="col-sm-9">
+                          <input type="text" class="form-control" name="usuario"  placeholder="Ingrese su usuario" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="password" class ="col-md-3 col-form-label">Password:</label>
+                          <div class="col-sm-9">
+                          <input type="password" class="form-control" name="password" placeholder="Password" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                      <label for="rol" class ="col-md-3 col-form-label">Rol:</label>
+                          <div class="col-sm-9">
+
+                              <select class="form-control" name = "rol" id="rol " required>
+                        
+                                <option selected disabled value="">Seleccione...</option>
+                                <option value="1">Docente</option>
+                                <option value="2">Estudiante</option>
+                            
+                              </select>
+                          </div>
+                      </div>
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary  btn-block">Registrarse</button>
+                              <div class = "p-2">
+                                  ¿Ya tiene una cuenta? <a href="index.php">Iniciar sesión</a>
+                              </div>
+                      </div>
+
+                  </form>
+              </div>
+        </div>
+                    <?php if(!empty($message)): ?>
+                    <div class="col-md-15 p-2">
+                    <div class="alert alert-dark" role="alert"> <?= $message ?></div> </div>
+                    <?php endif; ?>
+    </div>
+                    
+ </div>
+
+  </body>
+</html>
+
+
+<?php include ("footers/footer.html"); ?>

@@ -1,0 +1,43 @@
+<?php include ("headers/headerLogin.html"); ?>
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-3.5 p-4">
+
+        <div class="card">
+            
+            <div class="card-header bg-primary">
+                <h5  class = "text-white text-center">INICIAR SESIÓN</h5>
+            </div>
+
+            <div class="card-body">
+               
+                <form action= "index.php" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Usuario</label>
+                        <input type="text" class="form-control" name="usuario" placeholder="Ingrese su usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary  btn-block">Iniciar Sesión</button>
+                            <div class = "p-2">
+                                ¿Aún no tiene cuenta? <a href="index.php?accion=signup">Regístrate aquí</a>
+                            </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+                     <?php if(!empty($message)): ?>
+                        <div class="col-md-12 p-2">
+                        <div class="alert alert-success" role="alert"> <?= $message ?></div> </div> 
+                    <?php endif; ?>
+    </div>
+    </div>
+ 
+</body>
+</html>
+
+<?php include ("footers/footer.html"); ?>

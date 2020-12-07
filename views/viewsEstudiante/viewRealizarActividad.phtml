@@ -1,0 +1,77 @@
+<?php include ("views/headers/headerEstudiante.html"); ?>
+
+<div class="d-flex justify-content-center p-2">
+    <div class="col-md-12  p-4">
+
+        <div class="card">
+
+        <div class="d-flex justify-content-center p-3">
+            <label id = "titulo_lectura"></label>
+        </div>
+
+        <div class="d-flex justify-content-center p-2">
+        <div class="col-md-12">
+               
+                   
+                   <div class="form-group p-2">
+                       <textarea type ="text" readonly class = "ckeditor" rows="6" id= "contenido" name="contenido" required> </textarea>
+                   </div>
+
+                   <div class="d-flex justify-content-center">
+                        <label><h4>Preguntas</h4></label>
+                    </div>
+
+                   <hr class="my-4"> <!-- -- ----------------------------  -->  
+
+                   
+
+                    <form action="#" method = "POST">
+
+                        <div id="datos" class="container p-2">
+                            <!-- -- ----------------------------  
+                        <label id="numero_pregunta"></label><label id= "pregunta"></label>
+
+                                <input type="radio" id="a" name="question" value="a">
+                                <label for="a">a)</label><br>
+                                <input type="radio" id="b" name="question" value="b">
+                                <label for="b">b)</label><br>
+                                <input type="radio" id="c" name="question" value="c">
+                                <label for="c">c)</label><br>
+                                <input type="radio" id="d" name="question" value="d">
+                                <label for="d">d)</label>
+                                --> 
+                                
+                            </div>
+
+                        <div class="text-right">
+                             <button type="submit" class="btn btn-primary">Terminar intento</button>
+                        </div>
+                                
+                    </form>
+
+                 
+
+           </div> 
+        </div>
+        
+
+
+
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<?php include ("views/footers/footer.html"); ?>
+
+<script type = "text/javascript">
+
+$(document).ready(function(){
+    
+    obtenerLecturaEstudiante( <?php echo $id_lectura ?> );
+    obtenerPreguntas( <?php echo $id_lectura ?> );
+   
+}); 
+</script>
